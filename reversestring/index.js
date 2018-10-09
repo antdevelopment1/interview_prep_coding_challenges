@@ -6,6 +6,9 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+function reverse(str) {
 
+//Takes a string and uses the split method to split each character into an array, reverse the order, and joins the result back together.
+  return str.split("").reverse().join("");
+}
 module.exports = reverse;
