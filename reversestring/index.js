@@ -24,6 +24,20 @@ function reverse2(str) {
   return reversed;
 }
 
+// Solution #3
+function reverse3(str) {
+  return str.split('').reduce(function(reversed, character) {
+    return character + reversed;
+  }, '');
+}
+
+// or
+// function reverse3(str) {
+//   return str.split('').reduce((rev, char) => char + rev, '');
+// }
+
+
 
 module.exports = reverse;
 module.exports = reverse2;
+module.exports = reverse3;
