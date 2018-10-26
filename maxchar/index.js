@@ -9,13 +9,26 @@
 // Solution 1:
 // 
 // Solution 2:
+// function maxChar(str) {
+//     const string = 'Hello There!';
+//     const letters = {};
+//     for (let letter in letters) {
+//         letters[letter] = letters[letter] + 1 || 1;
+//     }
+//     return letters;
+// }
+
 function maxChar(str) {
-    const string = 'Hello There!';
-    const letters = {};
-    for (let letter in letters) {
-        letters[letter] = letters[letter] + 1 || 1;
+    const listOfLetters = {};
+
+    for (let letter of str) {
+        if (listOfLetters[letter]) {
+            listOfLetters[letter]++;
+        } else {
+            listOfLetters[letter] = 1;
+        }
     }
-    return letters;
+    
 }
 
 
