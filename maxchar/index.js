@@ -20,6 +20,8 @@
 
 function maxChar(str) {
     const listOfLetters = {};
+    let maxNum = 0;
+    let currentLetter = '';
 
     for (let letter of str) {
         if (listOfLetters[letter]) {
@@ -28,7 +30,14 @@ function maxChar(str) {
             listOfLetters[letter] = 1;
         }
     }
-    
+
+    for (let letter in listOfLetters) {
+        if (listOfLetters[letter] > maxNum) {
+            maxNum = listOfLetters[letter];
+            currentLetter = letter;
+        }
+    }
+    return currentLetter;
 }
 
 
