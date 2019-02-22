@@ -19,9 +19,21 @@
 // Solution 2:
 // Strings dont have access to the every helper function. That is only arrays.
 // With .every just like .map or filter was can pass an index value as the second parameter.
+// function palindrome(str) {
+//    return str.split('').every((letter, index) => {
+//         return letter === str[str.length - index - 1];
+//     }); 
+// }
+
 function palindrome(str) {
-   return str.split('').every((letter, index) => {
-        return letter === str[str.length - index - 1];
-    }); 
+    let backwards = ''
+    for (let i = str.length - 1; i >= 0; i--) {
+       backwards += str[i];
+    }
+    if (str === backwards) {
+        return true;
+    }
+    return false;
 }
+
 module.exports = palindrome;
