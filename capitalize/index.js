@@ -7,6 +7,26 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+function capitalize(str) {
+    // Create a new array by spliting the string into an array
+    let newArray = str.split(" ");
+    // Create a new empty array
+    let finalWord = [];
+
+    // Loop through the split array visiting each word
+    for (let i = 0; i < newArray.length; i++) {
+        // We set word to equal the word we are looping through currently
+        let word = newArray[i];
+        // We target the first letter in the current word we are looping through and uppercase the letter
+        let part1 = word[0].toUpperCase();
+        // We slice the rest of the word not including the first letter and save it in a variable
+        let part2 = word.slice(1);
+        // We push the result of adding the capitalized letter and the sliced word
+        finalWord.push(part1 + part2);
+    }
+    // We return the final array with each word capitalized and join them together.
+    return finalWord.join(" ");
+
+}
 
 module.exports = capitalize;
