@@ -31,10 +31,10 @@
 
 function capitalize(str) {
     // Create an empty string called 'result'
-    let result = '';
+    let result = str[0].toUpperCase();
 
     // Create a loop that loops through each character in the string
-    for (let i = 0; i < str.length; i++) {
+    for (let i = 1; i < str.length; i++) {
         // If the character to the left is a space
         if (str[i - 1] === ' ') {
             // We will capitalize the current letter and add it to result
@@ -49,6 +49,6 @@ function capitalize(str) {
 
 }
 
-console.log(capitalize("Hey how are you there today. I am good, how aboout you"))
+console.log(capitalize("hey how are you there today. I am good, how aboout you"))
 
 module.exports = capitalize;
