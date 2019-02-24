@@ -22,4 +22,14 @@ function steps(n) {
 
 console.log(steps(10))
 
+// Recursive Solution
+function printNumber(n) {
+    if (n === 0) {
+        return;
+    }
+    console.log(n);
+    return printNumber(n - 1);
+}
+console.log(printNumber(10))
+
 module.exports = steps;
