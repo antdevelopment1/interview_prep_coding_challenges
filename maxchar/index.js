@@ -18,50 +18,51 @@
 //     return letters;
 // }
 
-// function maxChar(str) {
-//     const listOfLetters = {};
-//     let maxNum = 0;
-//     let currentLetter = '';
-
-//     for (let letter of str) {
-//         if (listOfLetters[letter]) {
-//             listOfLetters[letter]++;
-//         } else {
-//             listOfLetters[letter] = 1;
-//         }
-//     }
-
-//     for (let letter in listOfLetters) {
-//         if (listOfLetters[letter] > maxNum) {
-//             maxNum = listOfLetters[letter];
-//             currentLetter = letter;
-//         }
-//     }
-//     return currentLetter;
-// }
-
 function maxChar(str) {
+    const listOfLetters = {};
+    let maxNum = 0;
+    let currentLetter = '';
 
-    let obj = {};
-    let temp = '';
-
-    for (let i = 0; i < str.length; i++) {
-        if (obj[str[i]]) {
-            obj[str[i]] += 1;
+    for (let letter of str) {
+        if (listOfLetters[letter]) {
+            listOfLetters[letter]++;
         } else {
-            obj[str[i]] = 1;
+            listOfLetters[letter] = 1;
         }
     }
 
-    for (let key in obj) {
-        if (obj[key] > temp) {
-            temp = key;
+    for (let letter in listOfLetters) {
+        if (listOfLetters[letter] > maxNum) {
+            maxNum = listOfLetters[letter];
+            currentLetter = letter;
         }
     }
-
-    return temp;
+    return currentLetter;
 }
-console.log(maxChar('ab1c1d1e1f1g1'));
+console.log(maxChar("hello how are you there"))
+
+// function maxChar(str) {
+
+    // let obj = {};
+    // let temp = '';
+
+    // for (let i = 0; i < str.length; i++) {
+    //     if (obj[str[i]]) {
+    //         obj[str[i]] += 1;
+    //     } else {
+    //         obj[str[i]] = 1;
+    //     }
+    // }
+
+    // for (let key in obj) {
+    //     if (obj[key] > temp) {
+    //         temp = key;
+    //     }
+    // }
+
+    // return temp;
+// }
+// console.log(maxChar('hello there how are you today'));
 
 module.exports = maxChar;
 
