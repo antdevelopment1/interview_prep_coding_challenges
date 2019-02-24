@@ -22,14 +22,34 @@ function steps(n) {
 
 console.log(steps(10))
 
-// Recursive Solution
+// Recursive Solution For Simple Print Statement
 function printNumber(n) {
     if (n === 0) {
         return;
     }
-    console.log(n);
+    
     return printNumber(n - 1);
 }
 console.log(printNumber(10))
+
+// Recursive Solution for Steps Algorithm
+function stairs(n, row = 0, stair = '') {
+   if (n === row) {
+    return;
+   }
+   if (n === stair.length) {
+    console.log(stair);
+    stairs(n, row + 1);
+    return;
+   }
+   if (stair.length <= row) {
+    stair += '#';
+   } else {
+       stair += ' ';
+   }
+   steps(n, row, stair);
+}
+
+console.log(stairs(10))
 
 module.exports = steps;
